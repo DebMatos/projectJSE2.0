@@ -1,0 +1,17 @@
+package io.altar.jseproject.service;
+
+import io.altar.jseproject.repositories.ProductRepository;
+
+public class ProductControler {
+
+	ProductRepository productRepository = ProductRepository.getInstance();
+
+	public boolean isEmpty() {
+		if (productRepository.isEmpty()) {
+			return true;
+		} else
+			return false;
+
+	}
+
+}
