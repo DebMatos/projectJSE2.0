@@ -59,6 +59,40 @@ public class ScannerUtils {
 		} while (!validInt);
 		return result;
 	}
+	
+	public double getValidDoubleFromScanner(String msg, double[] ivas, boolean canBeNull) {
+		int result;
+		boolean validInt = false;
+		do {
+			result = getIntFromScanner(msg, canBeNull);
+			if (canBeNull && result == -1) {
+				return -1;
+			} else {
+				for (double i : ivas) {
+					if (result == i) {
+						validInt = true;
+					}
+				}
+				if (!validInt) {
+					String validString = "";
+					for (double i : ivas) {
+						validString += " " + i;
+					}
+					System.out.println("Numero errado tem de ser" + validString);
+				}
+			}
+		} while (!validInt);
+		return result;
+	}
+	public double getValidDoubleFromScanner(String msg, double max, boolean canBeNull) {
+		double result;
+		do {
+			result = getDoubleFromScanner(msg, canBeNull);
+			if (result > max)
+				System.out.println("O Numero tem de ser menor que " + max);
+		} while (result > max);
+		return result;
+	}
 
 	public int getValidIntFromScanner(String msg, int[] ivas) {
 		return getValidIntFromScanner(msg, ivas, false);

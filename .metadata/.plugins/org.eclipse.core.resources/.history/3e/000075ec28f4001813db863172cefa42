@@ -1,0 +1,14 @@
+package io.altar.jseproject.textinterface.states;
+
+public class EcraNovoProducto implements State {
+
+	@Override
+	public int execute() {
+		System.out.println(" Novo produto:");
+		double pvp=scannerUtils.getDoubleFromScanner("PVP", true);
+		double [] ivas= {23,16,6};
+		double iva= scannerUtils.getValidDoubleFromScanner("Iva" , ivas, false);
+		return 1;
+	}
+
+}

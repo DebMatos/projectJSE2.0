@@ -1,0 +1,39 @@
+package io.altar.jseproject.textinterface.states;
+
+
+import io.altar.jseproject.service.ProductControler;
+
+public class MenuListarProdutos implements State {
+
+	
+	
+	@Override
+	public int execute() {
+		int[] opcoes;
+		if(ProductControler.isEmpty()){
+			System.out.println("-------------------------------------------");
+			System.out.println("              Produtos");
+			System.out.println("");
+			System.out.println("1) Criar novo produto");
+			System.out.println("5) Voltar ao ecra anterior");
+			System.out.println("-------------------------------------------");
+			 opcoes = new int[]{1,5};
+			 return scannerUtils.getValidIntFromScanner("Por favor, selecione uma das opcoes", opcoes);
+		}else{
+		
+	    System.out.println("-------------------------------------------");
+	    System.out.println("                 Produtos");
+	    ProductControler.getAllProducts();
+		System.out.println("");
+		System.out.println("1) Criar novo produto");
+		System.out.println("2) Editar produto existente");
+		System.out.println("3) Consultar detalhe de um produto");
+		System.out.println("4) Remover um produto");
+		System.out.println("5) Voltar ao ecra anterior");
+		System.out.println("-------------------------------------------");
+		opcoes= new int[]{1,2,3,4,5};
+		System.out.println("");
+		return scannerUtils.getValidIntFromScanner("  Por favor selecione uma das opcoes:", opcoes);}
+	}
+
+}

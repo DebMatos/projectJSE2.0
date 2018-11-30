@@ -1,0 +1,26 @@
+package io.altar.jseproject.service;
+
+import io.altar.jseproject.model.Product;
+import io.altar.jseproject.repositories.ShelfRepository;
+
+public class ShelfControler {
+
+	
+	static ShelfRepository shelfRepository = ShelfRepository.getInstance();
+
+	public static boolean isEmpty() {
+		if (shelfRepository.isEmpty()) {
+			return true;
+		} else
+			return false;
+	}
+	
+	
+	public static String createShelf(double discountValue, double iva, double pvp) {
+		
+		Shelf shelf= new Shelf( discountValue, iva, pvp);
+		shelfRepository.save(shelf);
+		return shelf.toString();
+	}
+
+}
