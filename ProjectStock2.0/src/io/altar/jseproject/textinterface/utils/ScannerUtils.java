@@ -1,5 +1,6 @@
 package io.altar.jseproject.textinterface.utils;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ScannerUtils {
@@ -176,7 +177,7 @@ public class ScannerUtils {
 		return getValidLongFromScanner(msg, max, false);
 	}
 
-	public Long getValidLongFromScanner(String msg, Long[] ivas, boolean canBeNull) {
+	public Long getValidLongFromScanner(String msg, ArrayList<Long> ivas, boolean canBeNull) {
 		Long result;
 		boolean validInt = false;
 		do {

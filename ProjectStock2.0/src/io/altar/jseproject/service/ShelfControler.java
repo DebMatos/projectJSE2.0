@@ -7,11 +7,12 @@ import java.util.Iterator;
 
 import io.altar.jseproject.model.Product;
 import io.altar.jseproject.model.Shelf;
+import io.altar.jseproject.repositories.ProductRepository;
 import io.altar.jseproject.repositories.ShelfRepository;
 
 public class ShelfControler {
 
-	
+	static ProductRepository productRepository = ProductRepository.getInstance();
 	static ShelfRepository shelfRepository = ShelfRepository.getInstance();
 
 	public static boolean isEmpty() {
@@ -40,6 +41,20 @@ public class ShelfControler {
 		}
 		return prateleiras;
 	}
+	
+	
+	
+	public static ArrayList<Long> allProductsIds() {
+		
+		ArrayList<Long> productIds = new ArrayList<Long>();
+		Iterator<Product> it = productRepository.getAll();
+		while (it.hasNext()) {
+			Long ids = it.next().getId();
+			productIds.add(ids);
+		}
+	
+	return productIds;
+}
 }
 
 

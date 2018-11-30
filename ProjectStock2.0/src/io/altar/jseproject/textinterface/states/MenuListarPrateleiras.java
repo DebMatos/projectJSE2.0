@@ -22,6 +22,7 @@ public class MenuListarPrateleiras implements State {
 			opcoes = new int[] { 1, 5 };
 			return scannerUtils.getValidIntFromScanner("Por favor selecione uma das opcoes", opcoes);
 		} else {
+			allShelves();
 			System.out.println("-------------------------------------------");
 			System.out.println("           Prateleiras");
 			System.out.println("");

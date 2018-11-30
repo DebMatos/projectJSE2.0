@@ -1,0 +1,59 @@
+package io.altar.jseproject.service;
+
+
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import io.altar.jseproject.model.Product;
+import io.altar.jseproject.model.Shelf;
+import io.altar.jseproject.repositories.ProductRepository;
+import io.altar.jseproject.repositories.ShelfRepository;
+
+public class ShelfControler {
+
+	static ProductRepository productRepository = ProductRepository.getInstance();
+	static ShelfRepository shelfRepository = ShelfRepository.getInstance();
+
+	public static boolean isEmpty() {
+		if (shelfRepository.isEmpty()) {
+			return true;
+		} else
+			return false;
+	}
+	
+	
+	public static String createShelf(String capacity, double rentPrice) {
+		
+		Shelf shelf= new Shelf( capacity, rentPrice);
+		shelfRepository.save(shelf);
+		return shelf.toString();
+	}
+	
+	
+	public static ArrayList<String> getAllShelves() {
+
+		ArrayList<String> prateleiras = new ArrayList<String>();
+		Iterator<Shelf> it = shelfRepository.getAll();
+		while (it.hasNext()) {
+			String shelf = it.next().toString();
+			prateleiras.add(shelf);
+		}
+		return prateleiras;
+	}
+	
+	
+	
+	public static ArrayList<Long> allProductsIds() {
+		
+		ArrayList<Long> productIds = new ArrayList<Long>();
+		Iterator<Product> it = productRepository.getAll();
+		while (it.hasNext()) {
+			Long ids = it.next().getId();
+			productIds.add(ids);
+		}
+	
+	return productIds;
+}
+
+

@@ -23,11 +23,7 @@ public class EcraNovoProducto implements State {
 			double [] ivas= {23.0,16.0,6.0};
 			double iva= scannerUtils.getValidDoubleFromScanner("Iva" , ivas, true);
 			double discountValue= scannerUtils.getValidDoubleFromScanner("Desconto" , 100, true);
-		
-			//verrrr converter para array
-			
-			Long [] ids=(Long[]) ProductControler.allShelvesIds().toArray();
-			Long id=scannerUtils.getValidLongFromScanner("Id da prateleira", ids, true);
+			Long id=scannerUtils.getValidLongFromScanner("Id da prateleira", ProductControler.allShelvesIds(), true);
 			
 			System.out.println("-------------------------------------------");
 		}
