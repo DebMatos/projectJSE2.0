@@ -1,6 +1,5 @@
 package io.altar.jseproject.textinterface.stateMachine;
 
-import io.altar.jseproject.textinterface.states.EcraNovaPrateleira;
 import io.altar.jseproject.textinterface.states.EcraNovoProducto;
 import io.altar.jseproject.textinterface.states.MenuInicial;
 import io.altar.jseproject.textinterface.states.MenuListarPrateleiras;
@@ -25,14 +24,12 @@ import io.altar.jseproject.textinterface.states.State;
 		public State[] states = { new MenuInicial(),  //0
 								new MenuListarProdutos(), //1
 								new MenuListarPrateleiras(), //2
-								new EcraNovoProducto(),//3
-								new EcraNovaPrateleira()}; //4
+								new EcraNovoProducto()}; //3
 
-		private int transitionMatrix[][] = {{1, 2 },       //0
-											{3,1,1,1,0 },   //1  Produtos
-											{4,2,2,2,0 },   //2  Prateleiras
-											{1},			 //3 Novo produto
-											{2}  			 //4 Nova prateleira
+		private int transitionMatrix[][] = { { 1, 2 },       //0
+											{ 3,1,1,1,0 },   //1  Produtos
+											{ 0,2,2,2,0 },   //2  Prateleiras
+											{1}           //2 Novo produto
 											}; 
 
 		private int currentState = 0;

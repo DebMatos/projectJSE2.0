@@ -2,7 +2,6 @@ package io.altar.jseproject.service;
 
 
 
-import java.util.ArrayList;
 import java.util.Iterator;
 
 import io.altar.jseproject.model.Product;
@@ -30,16 +29,6 @@ public class ShelfControler {
 	}
 	
 	
-	public static ArrayList<String> getAllShelves() {
+		
 
-		ArrayList<String> prateleiras = new ArrayList<String>();
-		Iterator<Shelf> it = shelfRepository.getAll();
-		while (it.hasNext()) {
-			String shelf = it.next().toString();
-			prateleiras.add(shelf);
-		}
-		return prateleiras;
-	}
 }
-
-

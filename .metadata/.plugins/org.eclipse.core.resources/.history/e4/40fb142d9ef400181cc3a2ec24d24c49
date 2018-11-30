@@ -17,20 +17,6 @@ public class ScannerUtils {
 		return Integer.parseInt(input);
 	}
 
-	
-	public String getStringFromScanner(String msg, boolean canBeNull) {
-		String input;
-		
-			System.out.println(msg);
-			input = sc.nextLine();
-			if (canBeNull && input.equals("")) {
-				return "";
-			}
-		
-		return input;
-	}
-	
-	
 	public int getIntFromScanner(String msg) {
 		return getIntFromScanner(msg, false);
 	}

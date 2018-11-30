@@ -3,6 +3,7 @@ package io.altar.jseproject.textinterface.states;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+
 import io.altar.jseproject.service.ProductControler;
 
 public class MenuListarProdutos implements State {

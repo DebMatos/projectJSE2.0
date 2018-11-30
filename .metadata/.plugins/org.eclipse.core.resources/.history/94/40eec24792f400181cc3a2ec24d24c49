@@ -1,10 +1,6 @@
 package io.altar.jseproject.textinterface.states;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import io.altar.jseproject.service.ProductControler;
-import io.altar.jseproject.service.ShelfControler;
 
 public class MenuListarPrateleiras implements State {
 
@@ -35,16 +31,4 @@ public class MenuListarPrateleiras implements State {
 			return scannerUtils.getValidIntFromScanner("Por favor selecione uma das opcoes", opcoes);
 		}
 	}
-	
-public void allShelves() {
-		
-		ArrayList prateleiras=ShelfControler.getAllShelves();
-		 Iterator<String> it = prateleiras.iterator();
-		    while (it.hasNext()) {
-			
-				System.out.println(it.next().toString());
-			}
-		}
-	
-	
 }
