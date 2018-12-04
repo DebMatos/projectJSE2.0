@@ -10,7 +10,7 @@ public class EcraNovaPrateleira implements State {
 
 	@Override
 	public int execute() {
-		if (ShelfControler.isEmpty()) {
+		if (ProductControler.isEmpty()) {
 			System.out.println("-------------------------------------------");
 			System.out.println("              Nova prateleira:");
 			String capacity = scannerUtils.getStringFromScanner("Capacidade", false);
@@ -25,6 +25,7 @@ public class EcraNovaPrateleira implements State {
 			double rentPrice = scannerUtils.getDoubleFromScanner("Preco aluguer/dia", false);
 			System.out.println("-------------------------------------------");
 			Long id=scannerUtils.getValidLongFromScanner("Id do produto", ShelfControler.allProductsIds(), true);
+			ShelfControler.createShelfWhithProduct(  capacity,  rentPrice,  id);
 			return 1;
 		}
 	}

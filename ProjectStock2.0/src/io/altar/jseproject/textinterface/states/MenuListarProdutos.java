@@ -13,6 +13,7 @@ public class MenuListarProdutos implements State {
 	public int execute() {
 		int[] opcoes;
 		if(ProductControler.isEmpty()){
+			 allProducts();
 			System.out.println("-------------------------------------------");
 			System.out.println("              Produtos");
 			System.out.println("");

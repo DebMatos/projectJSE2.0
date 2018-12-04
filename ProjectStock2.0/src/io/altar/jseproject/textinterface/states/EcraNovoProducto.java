@@ -24,7 +24,7 @@ public class EcraNovoProducto implements State {
 			double iva= scannerUtils.getValidDoubleFromScanner("Iva" , ivas, true);
 			double discountValue= scannerUtils.getValidDoubleFromScanner("Desconto" , 100, true);
 			Long id=scannerUtils.getValidLongFromScanner("Id da prateleira", ProductControler.allShelvesIds(), true);
-			
+			ProductControler.createProductWhithShelf( discountValue, iva, pvp, id);
 			System.out.println("-------------------------------------------");
 		}
 		return 1;

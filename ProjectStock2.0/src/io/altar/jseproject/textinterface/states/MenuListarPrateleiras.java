@@ -13,6 +13,7 @@ public class MenuListarPrateleiras implements State {
 
 		int[] opcoes;
 		if (ProductControler.isEmpty()) {
+			allShelves();
 			System.out.println("-------------------------------------------");
 			System.out.println("         Prateleiras");
 			System.out.println("");
